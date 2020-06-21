@@ -25,7 +25,11 @@ export default function App() {
         <Button title="Add" onPress={addGoalHandler} />
       </View>
       <View>
-        {courseGoals.map((goal) => <Text key={goal}>{goal}</Text>)}
+        {courseGoals.map((goal) =>
+          <View key={goal} style={styles.listItem}>
+            <Text>{goal}</Text>
+          </View>
+        )}
       </View>
     </View>
   );
@@ -33,7 +37,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 30
+    padding: 50
   },
   addContainer: {
     flexDirection: 'row',
@@ -46,5 +50,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%'
+  },
+  listItem: {
+    padding: 10,
+    backgroundColor: '#ccc',
+    borderColor: 'black',
+    borderWidth: 1,
+    marginVertical: 10
   }
 });
